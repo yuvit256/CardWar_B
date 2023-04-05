@@ -5,7 +5,7 @@
 #include <fstream>
 #include <sstream>
 #include <stdexcept>
-#include <stack>
+#include <vector>
 #include "card.hpp"
 using namespace std;
 
@@ -24,22 +24,22 @@ namespace ariel
 
         string getName();
 
-        stack<Card> *getCardsDeck()
+        vector<Card> *getCardsDeck()
         {
             return this->cardsDeck;
         }
 
-        stack<Card> *getUsedCards()
+        vector<Card> *getUsedCards()
         {
             return this->usedCards;
         }
 
-        void setCardsDeck(stack<Card> *cardsDeck)
+        void setCardsDeck(vector<Card> *cardsDeck)
         {
             this->cardsDeck = cardsDeck;
         }
 
-        void setUsedCards(stack<Card> *usedCards)
+        void setUsedCards(vector<Card> *usedCards)
         {
             this->usedCards = usedCards;
         }
@@ -117,9 +117,9 @@ namespace ariel
     private:
         string name;
 
-        stack<Card> *cardsDeck;
+        vector<Card> *cardsDeck;
 
-        stack<Card> *usedCards;
+        vector<Card> *usedCards;
 
         int cardsLost = 0;
 
