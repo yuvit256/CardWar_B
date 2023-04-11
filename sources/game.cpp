@@ -264,7 +264,6 @@ void Game::printWiner()
 void Game::printLog()
 {
     int i = this->player1.getTurns();
-    cout << "Turns = " << i << "\n";
     while (i > 0)
     {
         this->printLastTurn();
