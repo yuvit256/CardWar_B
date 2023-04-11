@@ -24,34 +24,32 @@ namespace ariel
 
         string getName();
 
-        vector<Card> *getCardsDeck()
+        void addCardToDeck(Card &crd);
+
+        void removeCard()
         {
-            return this->cardsDeck;
+            this->cardsDeck.pop_back();
         }
 
-        vector<Card> *getUsedCards()
+        Card getCard();
+
+        void addCardToUDeck(Card &crd);
+
+        void removeUCard()
         {
-            return this->usedCards;
+            this->usedCards.pop_back();
         }
 
-        void setCardsDeck(vector<Card> *cardsDeck)
-        {
-            this->cardsDeck = cardsDeck;
-        }
-
-        void setUsedCards(vector<Card> *usedCards)
-        {
-            this->usedCards = usedCards;
-        }
+        Card getUCard();
 
         int getCardsDeckSize() const
         {
-            return (int)this->cardsDeck->size();
+            return (int)this->cardsDeck.size();
         }
 
         int getUsedCardsSize() const
         {
-            return (int)this->usedCards->size();
+            return (int)this->usedCards.size();
         }
 
         int getCardsLost() const
@@ -94,16 +92,6 @@ namespace ariel
             this->draws = newDraws;
         }
 
-        int getStackSize() const
-        {
-            return this->stackSize;
-        }
-
-        void setStackSize(int newSize)
-        {
-            this->stackSize = newSize;
-        }
-
         int getCardsWon() const
         {
             return this->cardsWon;
@@ -117,15 +105,13 @@ namespace ariel
     private:
         string name;
 
-        vector<Card> *cardsDeck;
+        vector<Card> cardsDeck;
 
-        vector<Card> *usedCards;
+        vector<Card> usedCards;
 
         int cardsLost = 0;
 
         int cardsWon = 0;
-
-        int stackSize = 0;
 
         int wins = 0;
 

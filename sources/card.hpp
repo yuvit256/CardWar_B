@@ -43,6 +43,16 @@ namespace ariel
             this->shp = shp;
         }
 
+        // bool operator==(const Card &rhs) const
+        // {
+        //     return val == rhs.val;
+        // }
+
+        // bool operator<(const Card &rhs) const
+        // {
+        //     return (val == 0 && rhs.val == 2) || (val > 2 && rhs.val < 3) || (val < rhs.val);
+        // }
+
     private:
         int val;
 
